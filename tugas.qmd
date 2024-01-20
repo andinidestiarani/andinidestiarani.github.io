@@ -1,0 +1,160 @@
+---
+title: "PENGARUH PERDAGANGAN EKSPOR-IMPOR TERHADAP KINERJA TENAGA LISTRIK DI JAWA TENGAH 2015 - 2020"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Andini Destiarani"
+date: 2024-01-20
+number-sections: true
+format:
+  html: default
+  docx: default
+editor: visual
+---
+
+![](poltekapp.jpg)
+
+## 1 Pendahuluan
+
+### 1.1 Latar belakang
+
+Jawa Tengah, sebagai salah satu provinsi utama di Indonesia, telah menyaksikan pertumbuhan ekonomi yang pesat selama beberapa tahun terakhir. Pertumbuhan ekonomi yang signifikan ini tidak hanya menciptakan peluang investasi dan pembangunan, tetapi juga memberikan dampak langsung terhadap kebutuhan tenaga listrik. Seiring dengan integrasi ekonomi global, aktivitas perdagangan ekspor-impor di Jawa Tengah menjadi faktor kritis yang berpotensi memengaruhi kinerja sektor tenaga listrik di wilayah ini. Pada periode 2015-2020, Jawa Tengah mengalami berbagai dinamika ekonomi dan tantangan, termasuk dampak pandemi COVID-19 pada tahun 2020 yang telah mengubah pola konsumsi, perdagangan internasional, dan kebijakan energi. Oleh karena itu, penelitian ini dilakukan untuk memberikan wawasan mendalam tentang bagaimana aktivitas perdagangan ekspor-impor di Jawa Tengah dapat dioptimalkan untuk meningkatkan kinerja sektor tenaga listrik, serta mengidentifikasi peluang dan tantangan yang muncul dalam konteks ini.
+
+### 1.2 Ruang lingkup
+
+Dalam penelitian ini penulis mengambil objek penelitian dari Badan Pusat Statistik Jawa Tengah. Ruang lingkup penelitian ini terdapat 3 variabel antara lain nilai ekspor provinsi Jawa Tengah, nilai impor Jawa Tengah, dan nilai produksi listrik Jawa Tengah. Data yang digunakan adalah data yang bersifat time series yaitu dalam kurun waktu 2015-2020 Optimalisasi ini akan dipengaruhi oleh tren perdagangan ekspor dan impor Jawa Tengah dari tahun 2015 hingga 2020 dan juga aktivitas perdagangan terhadap kebutuhan tenaga listrik, dengan memperhatikan komoditas yang terlibat dan partner perdagangan utama.
+
+### 1.3 Rumusan masalah
+
+. Bagaimana Tren Perdagangan Ekspor-Impor Mempengaruhi Keseimbangan Tenaga Listrik di Jawa Tengah? . Apa Dampak Perubahan Pola Konsumsi Energi Terkait dengan Aktivitas Perdagangan Ekspor-Impor?
+
+### 1.4 Tujuan dan manfaat penelitian
+
+Berdasarkan latar belakang dan permasalahan yang ada maka tujuan dari penelitian ini adalah Menyelidiki dampak pertumbuhan ekonomi terhadap tenaga listrik di Jawa Tengah selama periode 2015-2020 dan Mengevaluasi tren perdagangan ekspor dan impor di Jawa Tengah untuk memahami dampaknya terhadap keseimbangan dan efisiensi tenaga listrik. Penelitian ini diharapkan memberikan manfaat yaitu Menyediakan informasi yang dapat digunakan untuk merumuskan dan mengevaluasi kebijakan publik di bidang energi dan perdagangan di tingkat provinsi dan Memberikan wawasan kepada pelaku industri dan bisnis mengenai tren perdagangan dan konsumsi tenaga listrik, memungkinkan mereka untuk mengambil keputusan yang lebih baik.
+
+### 1.5 Package
+
+Packages yang digunakan sebagai penunjang regresi multivariat dalam penelitian ini antara lain sebagai berikut:
+
+``` r
+library(tidyverse)
+library(readxl)
+library(WDI)
+```
+
+## 2 Studi pustaka
+
+1.  Ekspor Ekspor merupakan perdagangan dengan cara mengeluarkan atau mengirimkan barang dari dalam wilayah atau keluar wilayah suatu negara (Mey, 2018). Aktivitas ekspor memiliki peran penting dalam perekonomian suatu negara, karena tidak hanya menciptakan pendapatan bagi eksportir, tetapi juga memengaruhi pertumbuhan ekonomi dan penciptaan lapangan kerja. Ekspor dapat menjadi salah satu penggerak pertumbuhan ekonomi. Negara yang aktif dalam kegiatan ekspor cenderung mengalami pertumbuhan ekonomi yang lebih tinggi karena meningkatnya permintaan terhadap produk dan jasa nasional.
+
+2.  Impor Impor merupakan suatu kegiatan pembelian dan memasukkan barang/ jasa atau komoditas dari luar negeri ke dalam negeri secara legal melalui proses perdagangan (Bea Cukai , 2022). Aktivitas impor memainkan peran penting dalam perdagangan internasional dan membentuk bagian integral dari ekonomi global. Aktivitas impor dapat memiliki dampak yang signifikan pada ekonomi suatu negara. Dengan membawa barang atau jasa dari luar negeri, impor dapat memengaruhi saldo perdagangan, tingkat lapangan kerja, dan kestabilan harga di pasar dalam negeri. Impor memainkan peran kunci dalam membangun konektivitas ekonomi global. Negara-negara saling bergantung satu sama lain untuk memenuhi kebutuhan dan menciptakan saling ketergantungan dalam perdagangan internasional.
+
+3.  Konsumsi Energi Konsumsi energi adalah penggunaan energi dalam berbagai bentuk oleh suatu masyarakat atau negara. Ini mencakup penggunaan energi listrik, energi panas, bahan bakar transportasi, dan energi lainnya untuk mendukung kegiatan ekonomi, industri, dan kehidupan sehari-hari. Konsumsi energi dapat diukur dalam satuan seperti kilowatt-hour (kWh) atau ton minyak setara (TOE).
+
+## 3 Metode penelitian
+
+### 3.1 Data
+
+Berikut adalah data yang digunakan sebagai objek penelitian, data dibawah ini merupakan data nilai ekspor, impor, dan tenaga listrik Provinsi Jawa Tengah .
+
+| Tahun | Ekspor (X) | Impor(S) | Tenaga Listrik (Y) |
+|-------|------------|----------|--------------------|
+| 2015  | 5374.69    | 10744.35 | 25690.27           |
+| 2017  | 447.47     | 10658.25 | 39579.73           |
+| 2018  | 6588.01    | 14778.86 | 40798.65           |
+| 2019  | 8516.70    | 12567.62 | 42131.61           |
+| 2020  | 8088.30    | 8719.80  | 41715.18           |
+
+: Penelitian ini menggunakan data sekunder dengan bentuk data time series 2015-2020, data yang dipakai ialah data yang telah diolah dengan sumber Badan Pusat Statistik Jawa Tengah.
+
+``` r
+setwd("C:/Users/luhun")
+andini<-read_excel('latihan1.xlsx')
+library(readxl)
+reg1<-lm(Y~X+S,data=andini)
+andini$m<-resid(reg1)
+plot(andini$X,andini$m,xlab="Nilai Ekspor",ylab="error")
+abline(h=0)
+```
+
+: Plot pengaruh error terhadap Nilai Ekspor
+
+![](eror.png)
+
+``` r
+library(readxl)
+andini$m<-resid(reg1)
+plot(andini$Y,andini$m,xlab="Nilai Tenaga Listrik",ylab="error")
+abline(h=0)
+```
+
+Plot pengaruh error terhadap Nilai Tenaga Listrik
+
+![](Nilai%20Tenaga.png)
+
+### 3.2 Metode analisis
+
+Teknik analisis yang digunakan dalam penelitian ini adalah teknik kuantitatif deskriptif. Metode yang dipilih adalah regresi multivariat dengan 2 variabel independen yaitu ekspor dan impor dan 1 variabel dependen yaitu Tenaga Listrik. Penelitian ini bertujuan untuk mencari hubungan antara ekspor (X) dan impor (S) dengan tenaga listrik (Y). Spesifikasi yang dilakukan adalah:
+
+$$
+y_{t}=\beta_0 + \beta_1 X+ \beta_2 S + \mu
+$$ di mana $y_t$ adalah hwy dan $x_t$ adalah cty. Di mana Y adalah Tenaga Listrik Jawa Tengah dan X adalah nilai ekspor Jawa Tengah dan S adalah nilai impor Jawa Tengah.
+
+## 4 Pembahasan
+
+### 4.1 Pembahasan masalah
+
+| Variabel          | Coefficient | Std.Error | t.value | Prob(.) |
+|-------------------|-------------|-----------|---------|---------|
+| Intercept         | 3.035e+04   | 2.481e+04 | 1.223   | 0.346   |
+| X                 | 4.015e-01   | 1.476e+00 | 0.272   | 0.811   |
+| R squared         | 0.06587     |           |         |         |
+| Adjusted R-Square | -0.8683     |           |         |         |
+| F-Statistic       | 0.06587     |           |         |         |
+| Prob(F-statistic) | 0.07051     |           |         |         |
+
+Hasil regresi yang telah didapat dimasukan ke dalam rumus persamaan yang ada sehingga menjadi:
+
+$$
+Y =3.035 +4.016X+ (4.615S)
+$$
+
+Ekspor pada pertumbuhan ekonomi berperan dalam peningkatan pertumbuhan ekonomi pada Tenaga Listrik dikarenakan nilai variabel X yang positif, tetapi jika dilihat pada hasil regresinya ekspor tidak sepenuhnya mempengaruhi Tenaga Listrik di Jawa Tengah atau dalam arti lain peningkatan Tenaga Listrik bukan hanya dipengaruhi ekspor saja tetapi terdapat faktor lain. Impor pada pertumbuhan ekonomi berbanding terbalik dengan ekspor, impor berpengaruh negatif terhadap Tenaga Listrik Jawa Tengah dikarenakan nilainya yang negatif, tetapi impor juga tidak sepenuhnya mempengaruhi Tenaga Listrik. Jika diasumsikan setiap kenaikan nilai ekspor 1, maka Tenaga Listrik akan meningkat sebesar 4.016. Tetapi jika diasumsikan nilai impor 1, maka Tenaga Listrik akan ada penurunan sebesar 4.614.
+
+Nilai F-statistik sebesar 0.06587 menunjukkan bahwa variabel independen dalam jangka panjang seperti ekspor, impor berpengaruh secara bersama-sama terhadap tingkat pertumbuhan ekonomi atau terhadap Tenaga Listrik.
+
+### 4.2 Analisis masalah
+
+Hasil regresinya adalah :
+
+``` r
+library(readxl)
+andini<-read_excel('latihan1.xlsx')
+reg1<-lm(Y~X+S,data=andini)
+summary(reg1)
+```
+
+![](Hasil%20Regresi.png)
+
+## 5 Kesimpulan
+
+Berdasarkan hasil regresi multivariat yang dilakukan, terdapat beberapa kesimpulan yang dapat diambil: 1. Variabel ekspor (X) memiliki pengaruh positif terhadap pertumbuhan ekonomi atau peningkatan tenaga listrik di Jawa Tengah. Namun, pengaruhnya tidak sepenuhnya dominan, karena terdapat faktor lain yang juga mempengaruhi peningkatan tenaga listrik.
+
+2.  Variabel impor (S) memiliki pengaruh negatif terhadap pertumbuhan ekonomi atau peningkatan tenaga listrik di Jawa Tengah. Jika nilai impor meningkat sebesar 1, maka tenaga listrik akan mengalami penurunan sebesar 4.614.
+
+3.  Hasil analisis menunjukkan bahwa variabel independen, yaitu ekspor dan impor, secara bersama-sama berpengaruh terhadap tingkat pertumbuhan ekonomi atau peningkatan tenaga listrik di Jawa Tengah.
+
+4.  Koefisien determinasi (R-squared) sebesar 0.06587 menunjukkan bahwa model regresi yang digunakan hanya mampu menjelaskan sekitar 6.587% variasi dalam data. Hal ini menunjukkan bahwa terdapat faktor lain yang tidak dimasukkan dalam model yang juga mempengaruhi pertumbuhan ekonomi atau peningkatan tenaga listrik.
+
+5.  Dalam analisis masalah, dilakukan pengolahan data menggunakan library "readxl" dan dilakukan regresi menggunakan fungsi "lm" pada data yang telah diolah. Hasil regresi tersebut digunakan untuk membuat plot pengaruh error terhadap nilai ekspor dan nilai tenaga listrik.
+
+## 6 Referensi
+
+*Bea Cukai . (2022). IMPOR. Retrieved from bcyogyakarta.beacukai.go.id: https://bcyogyakarta.beacukai.go.id/impor.html*
+
+*Mey, R. (2018). Ekspor dan Impor. Sleman: Politeknik Banjarmasin.*
+
+*Pengertian Ekspor \| hestanto. (n.d.). Retrieved January 19, 2023, from <https://www.hestanto.web.id/ekspor/>*
+
+*Multivariat & Dummy regression. (n.d.). Retrieved January 19, 2023, from <https://www.krisna.or.id/metopel/meeting3/index.html#/bandingkan-2-model>*
+
+*BPS Provinsi Jawa Tengah. (n.d). Retrieved January 19, 2024, from https://jateng.bps.go.id/indicator/8/52/1/nilai-ekspor-dan-impor.html*
+
+BPS Provinsi Jawa Tengah. (n.d). Retrieved January 19, 2024, from https://jateng.bps.go.id/publication/2022/11/15/acef47b91df2e0c3d69f0e49/statistik-listrik- provinsi-jawa-tengah-2020.html
